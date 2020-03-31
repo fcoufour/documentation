@@ -10,7 +10,6 @@ Note: Vous pouvez installer la commande `http` utilisée dans les exemples de ce
 
 ## Vue d'ensemble des canaux de transformation des données
 
-
 La base de donneé MongoDB dans laquelle les données sont intégrées est définie dans le fichier config.toml.
 
 Le schéma ci-dessous montre les différentes étapes de transformation des données.
@@ -117,8 +116,9 @@ Le champ `complete_types` est utile pour le comportement de compactage (cf parag
 
 Le champ `param` est utile pour le calcul des variables (cf le paragraphe à ce sujet). Il définit l'étendu des périodes à traiter et la dernière période pour laquelle les données d'effectif sont disponibles.
 
-Les types définis dans [handlers.go](https://github.com/signaux-faibles/opensignauxfaibles/blob/master/dbmongo/handlers.go) (variable `registeredParsers`) sont accessibles via:
+Attention, il n'y a à ce jour pas de processus de validation des chemins d'accès. Un chemin d'accès erroné provoquera une erreur dans l'import des données.
 
+Les types définis dans [handlers.go](https://github.com/signaux-faibles/opensignauxfaibles/blob/master/dbmongo/handlers.go) (variable `registeredParsers`) sont accessibles via:
 
 ```
 http :3000/api/admin/types
